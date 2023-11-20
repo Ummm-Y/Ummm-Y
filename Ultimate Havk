@@ -1,0 +1,37 @@
+export type TODO = any;
+export declare type BackpackItemType = "item" | "mathTownFrame" | "relic" | "fossil" | "follow" | "mount" | "spellRelic" | "weapon" | "outfit" | "boots" | "hat" | "currency" | "mathTownInterior" | "key";
+export declare interface Backpack {
+	addKeyItem(ID: number, something: number): void;
+	updated: boolean;
+	data: BackpackData
+}
+export declare interface BackpackItem {
+	/** Item count. */
+	ID: number;
+	[index: string]: number;
+	N?: number;
+}
+export declare type BackpackData = {
+	[type in BackpackItemType]: BackpackItem[]
+}
+import { Game } from "./game";
+
+export declare interface DebugMisc {
+	addPlayerTimer: null;
+	attackDamageCache: unknown;
+	bountyOverrides: unknown;
+	fakePlayerActions: unknown[];
+	fakePlayers: Map<unknown, unknown>;
+	game: Game;
+	generatedRandomPlayers: unknown[];
+	hatSwitchEvent: null;
+	stressTests: {
+		emitters: unknown[];
+		playerContainers: unknown[];
+	};
+	updatePlayerTimer: null;
+	_joinDelay: unknown;
+	_playerLimit: null;
+	disableTimeoutDialogue(): void;
+	[index: string]: TODO;
+}
